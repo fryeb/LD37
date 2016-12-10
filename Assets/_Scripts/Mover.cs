@@ -5,6 +5,7 @@ using System.Collections;
 public class Mover : MonoBehaviour {
 
 	public float fillPerSecond = 1.0f;
+	public bool moving = true;
 
 	public float fill
 	{
@@ -26,19 +27,24 @@ public class Mover : MonoBehaviour {
 
 	void Update () 
 	{
-		if (fillDirection)
+		if (moving)
 		{
-			image.fillAmount += fillSpeed * Time.deltaTime;
-			if (image.fillAmount >= 1.0f)
-				fillDirection = false;
-		}
-		else
-		{
-			image.fillAmount -= fillSpeed * Time.deltaTime;
-			if (image.fillAmount <= 0.0f)
-				fillDirection = true;
-		}
+			fillSpeed = 1 / fillPerSecond;
 
-		Debug.Log(fill);
+			if (fillDirection)
+			{
+				image.fillAmount += fillSpeed * Time.deltaTime;
+				if (image.fillAmount >= 1.0f)
+					fillDirection = false;
+			}
+			else
+			{
+				image.fillAmount -= fillSpeed * Time.deltaTime;
+				if (image.fillAmount <= 0.0f)
+					fillDirection = true;
+			}
+
+			Debug.Log(fill);
+		}
 	}
 }
