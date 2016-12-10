@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+
 public class Player : MonoBehaviour
 {
 	public Vector2 mouseSensitivity = Vector2.one;
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
 		transform.Rotate(0, look.x * mouseSensitivity.x, 0);
 		Camera.main.transform.Rotate(look.y * -mouseSensitivity.y, 0, 0);
 
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButtonDown(0))
 		{
 			PointerEventData pointerData = new PointerEventData(EventSystem.current);
 			pointerData.position = new Vector3(Screen.width / 2, Screen.height / 2);
@@ -22,11 +23,12 @@ public class Player : MonoBehaviour
 
 			foreach (RaycastResult result in results)
 			{
-				if (result.gameObject.layer == LayerMask.NameToLayer("WorldUI"))
+				Button button = result.gameObject.GetComponent<Button>();
+				if (button != null)
 				{
-					Debug.Log(result.gameObject.name);
+					button.clicked = true;
+				}
 			}
-		}
 		}
 	}
 }
