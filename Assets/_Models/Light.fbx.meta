@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: d827b4ff22db9194f8e8672151145261
-timeCreated: 1481351666
-=======
-guid: a78d38e151b782a468e9ab1afbb61249
-timeCreated: 1481351183
->>>>>>> f2400e66c6ddb696fcadc2860189bc18f2b39f6c
-licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -31,6 +24,7 @@ ModelImporter:
     4300000: Sphere
     4300002: Cylinder
     4300004: Cone
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -55,7 +49,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -89,7 +83,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
