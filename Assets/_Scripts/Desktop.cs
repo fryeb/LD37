@@ -7,14 +7,14 @@ public class Desktop : MonoBehaviour {
 	public static bool grass_complete;
 	public static bool roads_complete;
 	public static bool buildings_complete;
-	public static bool big_buildings_complete;
+	public static bool skyscrapers_complete;
 	public static bool life_complete;
 
 	private Button sky;
 	private Button grass;
 	private Button roads;
 	private Button buildings;
-	private Button bigBuildings;
+	private Button skyscrapers;
 	private Button life;
 
 	void Start () 
@@ -23,7 +23,7 @@ public class Desktop : MonoBehaviour {
 		grass = transform.FindChild("Grass").GetComponent<Button>();
 		roads = transform.FindChild("Roads").GetComponent<Button>();
 		buildings = transform.FindChild("Buildings").GetComponent<Button>();
-		bigBuildings = transform.FindChild("Big Buildings").GetComponent<Button>();
+		skyscrapers = transform.FindChild("Skyscrapers").GetComponent<Button>();
 		life = transform.FindChild("Life").GetComponent<Button>();
 	}
 
@@ -37,9 +37,9 @@ public class Desktop : MonoBehaviour {
 			PuzzleController.LoadPuzzle("Roads");
 		else if (buildings.clicked && roads_complete)
 			PuzzleController.LoadPuzzle("Buildings");
-		else if (bigBuildings.clicked && buildings_complete)
-			PuzzleController.LoadPuzzle("Big Buildings");
-		else if (life.clicked && big_buildings_complete)
+		else if (skyscrapers.clicked && buildings_complete)
+			PuzzleController.LoadPuzzle("Skyscrapers");
+		else if (life.clicked && skyscrapers_complete)
 			PuzzleController.LoadPuzzle("Life");
 	}
 }

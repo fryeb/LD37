@@ -15,31 +15,27 @@ public class Mover : MonoBehaviour {
 		}
 	}
 
-	private float fillSpeed;
 	private bool fillDirection = true;
 	private Image image;
 
 	void Start () 
 	{
 		image = transform.FindChild("Image").GetComponent<Image>();
-		fillSpeed = 1 / fillPerSecond;
 	}
 
 	void Update () 
 	{
 		if (moving)
 		{
-			fillSpeed = 1 / fillPerSecond;
-
 			if (fillDirection)
 			{
-				image.fillAmount += fillSpeed * Time.deltaTime;
+				image.fillAmount += fillPerSecond * Time.deltaTime;
 				if (image.fillAmount >= 1.0f)
 					fillDirection = false;
 			}
 			else
 			{
-				image.fillAmount -= fillSpeed * Time.deltaTime;
+				image.fillAmount -= fillPerSecond * Time.deltaTime;
 				if (image.fillAmount <= 0.0f)
 					fillDirection = true;
 			}

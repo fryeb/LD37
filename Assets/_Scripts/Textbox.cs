@@ -99,6 +99,8 @@ public class Textbox : MonoBehaviour {
 				entered += "8";
 			if (Input.GetKeyDown(KeyCode.Alpha9))
 				entered += "9";
+			if (Input.GetKeyDown(KeyCode.Minus))
+				entered += '-';
 		}
 
 		if (entered.Length > 0)
