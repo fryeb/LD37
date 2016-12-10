@@ -13,7 +13,12 @@ public class Textbox : MonoBehaviour {
 	{
 		text = GetComponent<Text>();
 		preamble = text.text;
-		entered = "asdf";
+		entered = "";
+	}
+
+	void OnDisable()
+	{
+		entered = "";
 	}
 	
 	// Update is called once per frame

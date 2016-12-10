@@ -24,7 +24,6 @@ public class PuzzleController : MonoBehaviour {
 				puzzle.gameObject.SetActive(true);
 			else
 				puzzle.gameObject.SetActive(false);
-
 		}
 	}
 

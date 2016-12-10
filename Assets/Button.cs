@@ -5,7 +5,7 @@ public class Button : MonoBehaviour {
 
 	public bool clicked = false;
 
-	void Awake()
+	void OnDisable()
 	{
 		clicked = false;
 	}
