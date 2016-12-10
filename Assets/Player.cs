@@ -12,23 +12,21 @@ public class Player : MonoBehaviour
 		transform.Rotate(0, look.x * mouseSensitivity.x, 0);
 		Camera.main.transform.Rotate(look.y * -mouseSensitivity.y, 0, 0);
 
-		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-
-		PointerEventData pointerData = new PointerEventData(EventSystem.current);
-
-		pointerData.position = Input.mousePosition;
-
-		List<RaycastResult> results = new List<RaycastResult>();
-		EventSystem.current.RaycastAll(pointerData, results);
-
-		if (results.Count > 0)
+		if (Input.GetMouseButton(0))
 		{
-			if (results[0].gameObject.layer == LayerMask.NameToLayer("UI"))
+			PointerEventData pointerData = new PointerEventData(EventSystem.current);
+			pointerData.position = new Vector3(Screen.width / 2, Screen.height / 2);
+
+			List<RaycastResult> results = new List<RaycastResult>();
+			EventSystem.current.RaycastAll(pointerData, results);
+
+			foreach (RaycastResult result in results)
 			{
-				string dbg = "Root Element: {0} \n GrandChild Element: {1}";
-				Debug.Log(string.Format(dbg, results[results.Count - 1].gameObject.name, results[0].gameObject.name));
-				results.Clear();
+				if (result.gameObject.layer == LayerMask.NameToLayer("WorldUI"))
+				{
+					Debug.Log(result.gameObject.name);
 			}
+		}
 		}
 	}
 }
