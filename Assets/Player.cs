@@ -7,8 +7,17 @@ public class Player : MonoBehaviour
 {
 	public Vector2 mouseSensitivity = Vector2.one;
 
+	void Start()
+	{
+		Cursor.visible = false;
+	}
+
+
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+			Cursor.visible = !Cursor.visible;
+
 		Vector2 look = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f);
 		transform.Rotate(0, look.x * mouseSensitivity.x, 0);
 		Camera.main.transform.Rotate(look.y * -mouseSensitivity.y, 0, 0);
