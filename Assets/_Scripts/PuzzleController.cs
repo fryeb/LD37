@@ -7,7 +7,7 @@ public class PuzzleController : MonoBehaviour {
 	public string first;
 	private static List<Transform> puzzles = new List<Transform>();
 
-	void Awake()
+	void OnEnable()
 	{
 		for (int i = 0; i < transform.childCount; i++)
 		{

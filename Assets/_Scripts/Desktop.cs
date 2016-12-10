@@ -17,7 +17,7 @@ public class Desktop : MonoBehaviour {
 	private Button skyscrapers;
 	private Button life;
 
-	void Start () 
+	void Awake () 
 	{
 		sky = transform.FindChild("Sky").GetComponent<Button>();
 		grass = transform.FindChild("Grass").GetComponent<Button>();
@@ -41,5 +41,37 @@ public class Desktop : MonoBehaviour {
 			PuzzleController.LoadPuzzle("Skyscrapers");
 		else if (life.clicked && skyscrapers_complete)
 			PuzzleController.LoadPuzzle("Life");
+
+		sky.transform.FindChild("Incomplete").gameObject.SetActive(true);
+
+		if (sky_complete)
+		{
+			sky.transform.FindChild("Complete").gameObject.SetActive(true);
+			grass.transform.FindChild("Incomplete").gameObject.SetActive(true);
+		}
+		if (grass_complete)
+		{
+			grass.transform.FindChild("Complete").gameObject.SetActive(true);
+			roads.transform.FindChild("Incomplete").gameObject.SetActive(true);
+		}
+		if (roads_complete)
+		{
+			roads.transform.FindChild("Complete").gameObject.SetActive(true);
+			buildings.transform.FindChild("Incomplete").gameObject.SetActive(true);
+		}
+		if (buildings_complete)
+		{
+			buildings.transform.FindChild("Complete").gameObject.SetActive(true);
+			skyscrapers.transform.FindChild("Incomplete").gameObject.SetActive(true);
+		}
+		if (skyscrapers_complete)
+		{
+			skyscrapers.transform.FindChild("Complete").gameObject.SetActive(true);
+			life.transform.FindChild("Incomplete").gameObject.SetActive(true);
+		}
+		if (life_complete)
+		{
+			life.transform.FindChild("Complete").gameObject.SetActive(true);
+		}
 	}
 }
