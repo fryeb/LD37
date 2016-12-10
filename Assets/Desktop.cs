@@ -3,6 +3,13 @@ using System.Collections;
 
 public class Desktop : MonoBehaviour {
 
+	public static bool sky_complete;
+	public static bool grass_complete;
+	public static bool roads_complete;
+	public static bool buildings_complete;
+	public static bool big_buildings_complete;
+	public static bool life_complete;
+
 	private Button sky;
 	private Button grass;
 	private Button roads;
@@ -24,15 +31,15 @@ public class Desktop : MonoBehaviour {
 	{
 		if (sky.clicked)
 			PuzzleController.LoadPuzzle("Sky");
-		else if (grass.clicked)
+		else if (grass.clicked && sky_complete)
 			PuzzleController.LoadPuzzle("Grass");
-		else if (roads.clicked)
+		else if (roads.clicked && grass_complete)
 			PuzzleController.LoadPuzzle("Roads");
-		else if (buildings.clicked)
+		else if (buildings.clicked && roads_complete)
 			PuzzleController.LoadPuzzle("Buildings");
-		else if (bigBuildings.clicked)
+		else if (bigBuildings.clicked && buildings_complete)
 			PuzzleController.LoadPuzzle("Big Buildings");
-		else if (life.clicked)
+		else if (life.clicked && big_buildings_complete)
 			PuzzleController.LoadPuzzle("Life");
 	}
 }
