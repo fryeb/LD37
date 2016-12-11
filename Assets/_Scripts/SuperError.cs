@@ -13,12 +13,14 @@ public class SuperError : MonoBehaviour {
 	private float elapsed = 1.0f;
 	private int currentChild = 0;
 
-	void Start()
+	void Awake()
 	{
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			transform.GetChild(i).gameObject.SetActive(false);
 		};
+
+		MusicController.Play("ThemeError");
 	}
 
 	void Update () 

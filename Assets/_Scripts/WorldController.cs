@@ -30,6 +30,8 @@ public class WorldController : MonoBehaviour {
 				element.gameObject.SetActive(true);
 			};
 		}
+
+		SoundEffectController.Play("RestoreSoundEffect");
 	}
 
 }
