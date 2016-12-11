@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MenuController : MonoBehaviour {
+public class MenuController : MonoBehaviour
+{
 
 	public float TurnSpeed = 1.0f;
 
 	private Transform SkyDome;
+	private bool playNormal = false;
+	private bool playZombies = false;
+	private bool quit = false;
 
 	void Start()
 	{
@@ -15,20 +19,33 @@ public class MenuController : MonoBehaviour {
 	void Update()
 	{
 		SkyDome.Rotate(0f, TurnSpeed * Time.deltaTime, 0f);
+
+		if (ScreenFade.complete)
+		{
+			if (playNormal)
+				Debug.Log("Play Normal");
+			else if (playZombies)
+				Debug.Log("Play Zombies");
+			else if (quit)
+				Debug.Log("Quit");
+		}
 	}
 
-	void PlayNormal()
+	public void PlayNormal()
 	{
-		
+		playNormal = true;
+		ScreenFade.isBlack = true;
 	}
 
-	void PlayZombies()
+	public void PlayZombies()
 	{
-		
+		playZombies = true;
+		ScreenFade.isBlack = true;
 	}
 
-	void Quit()
+	public void Quit()
 	{
-		Application.Quit();
+		quit = true;
+		ScreenFade.isBlack = true;
 	}
 }
