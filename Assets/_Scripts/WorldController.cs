@@ -9,6 +9,8 @@ public class WorldController : MonoBehaviour {
 
 	void Awake()
 	{
+		elements.Clear();
+
         if (!showAllObjects)
         {
             for (int i = 0; i < transform.childCount; i++)

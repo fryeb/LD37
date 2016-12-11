@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SuperError : MonoBehaviour {
 
+
+	public float duration = 15.0f;
 	public float delay = 1.0f;
+
+	private bool fading = false;
 
 	private float elapsed = 1.0f;
 	private int currentChild = 0;
@@ -28,6 +33,16 @@ public class SuperError : MonoBehaviour {
 				elapsed = 0.0f;
 				currentChild++;
 			}
+		}
+
+		if (fading && ScreenFade.complete)
+			SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+
+		duration -= Time.deltaTime;
+		if (duration <= 0.0f)
+		{
+			ScreenFade.isBlack = true;
+			fading = true;
 		}
 	}
 }

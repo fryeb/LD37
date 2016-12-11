@@ -18,9 +18,10 @@ public class ScreenFade : MonoBehaviour {
 	public static bool isBlack = false;
 	private static float alpha = 1.0f;
 
-	void Start () 
+	void Awake () 
 	{
 		black = transform.FindChild("black").GetComponent<Image>();
+		isBlack = false;
 	}
 
 	void Update () 

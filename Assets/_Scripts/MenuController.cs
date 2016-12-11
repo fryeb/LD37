@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MenuController : MonoBehaviour
@@ -11,9 +12,10 @@ public class MenuController : MonoBehaviour
 	private bool playZombies = false;
 	private bool quit = false;
 
-	void Start()
+	void Awake()
 	{
 		SkyDome = GameObject.Find("SkyDome").transform;
+		Cursor.visible = true;
 	}
 
 	void Update()
@@ -23,11 +25,11 @@ public class MenuController : MonoBehaviour
 		if (ScreenFade.complete)
 		{
 			if (playNormal)
-				Debug.Log("Play Normal");
+				SceneManager.LoadScene("Main", LoadSceneMode.Single);
 			else if (playZombies)
-				Debug.Log("Play Zombies");
+				SceneManager.LoadScene("Menu", LoadSceneMode.Single);
 			else if (quit)
-				Debug.Log("Quit");
+				Application.Quit();
 		}
 	}
 
