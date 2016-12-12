@@ -39,8 +39,6 @@ public class Mover : MonoBehaviour {
 				if (image.fillAmount <= 0.0f)
 					fillDirection = true;
 			}
-
-			Debug.Log(fill);
 		}
 	}
 }
