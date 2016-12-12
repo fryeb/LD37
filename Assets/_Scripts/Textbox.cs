@@ -7,25 +7,36 @@ public class Textbox : MonoBehaviour {
 	public string entered;
 	public int maxChars = 5;
 
-
 	private Text text;
 	private string preamble;
 
-	void Start () 
+	private float flash = 0.0f;
+	private bool show_cursor;
+
+	const float flash_duration = 0.5f;
+
+
+	void Awake () 
 	{
 		text = GetComponent<Text>();
 		preamble = text.text;
 		entered = "";
 	}
-
-	void OnDisable()
-	{
-		entered = "";
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = preamble + entered;
+		flash -= Time.deltaTime;
+
+		if (flash <= 0f)
+		{
+			flash = flash_duration;
+			show_cursor = !show_cursor;
+		}
+
+		if (show_cursor)
+			text.text = preamble + entered + "|";
+		else
+			text.text = preamble + entered;
 
 		if (entered.Length < maxChars)
 		{
