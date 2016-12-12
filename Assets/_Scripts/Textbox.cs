@@ -5,6 +5,8 @@ using System.Collections;
 public class Textbox : MonoBehaviour {
 
 	public string entered;
+	public int maxChars = 5;
+
 
 	private Text text;
 	private string preamble;
@@ -25,7 +27,7 @@ public class Textbox : MonoBehaviour {
 	void Update () {
 		text.text = preamble + entered;
 
-		if (entered.Length < 20)
+		if (entered.Length < maxChars)
 		{
 			if (Input.GetKeyDown(KeyCode.A))
 				entered += "a";

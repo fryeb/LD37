@@ -20,6 +20,8 @@ public class Login : MonoBehaviour {
 	{
 		if (password.entered == password_text)
 			start.gameObject.SetActive(true);
+		else
+			start.gameObject.SetActive(false);
 
 		if (start.clicked)
 			PuzzleController.LoadPuzzle("Safemode");

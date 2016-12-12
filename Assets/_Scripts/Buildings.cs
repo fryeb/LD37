@@ -18,9 +18,9 @@ public class Buildings : MonoBehaviour {
 	void Update () 
 	{
 		if (textbox.entered == answer)
-		{
 			restore.gameObject.SetActive(true);
-		}
+		else
+			restore.gameObject.SetActive(false);
 
 		if (restore.clicked)
 		{

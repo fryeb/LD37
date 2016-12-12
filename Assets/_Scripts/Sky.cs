@@ -18,9 +18,10 @@ public class Sky : MonoBehaviour {
 	void Update () 
 	{
 		if (equation_1.entered == answer)
-		{
-			restore.gameObject.SetActive(true);	     
-		}
+			restore.gameObject.SetActive(true);
+		else
+			restore.gameObject.SetActive(false);
+		
 		if (restore.clicked)
 		{
 			Desktop.sky_complete = true;
