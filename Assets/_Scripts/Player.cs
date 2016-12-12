@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
 	public Vector2 mouseSensitivity = Vector2.one;
 
-	void Start()
+	void Awake()
 	{
 		Cursor.visible = false;
 	}
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Escape))
-			Cursor.visible = !Cursor.visible;
+			ScreenFade.isBlack = true;
 
 		Vector2 look = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f);
 		transform.Rotate(0, look.x * mouseSensitivity.x, 0);
@@ -39,5 +40,11 @@ public class Player : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	void LateUpdate()
+	{
+		if (ScreenFade.isBlack && ScreenFade.complete)
+			SceneManager.LoadScene("Menu", LoadSceneMode.Single);
 	}
 }

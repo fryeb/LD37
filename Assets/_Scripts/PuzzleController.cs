@@ -9,6 +9,8 @@ public class PuzzleController : MonoBehaviour {
 
 	void OnEnable()
 	{
+		puzzles.Clear();
+
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			puzzles.Add(transform.GetChild(i));
