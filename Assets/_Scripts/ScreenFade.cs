@@ -10,7 +10,7 @@ public class ScreenFade : MonoBehaviour {
 	{
 		get
 		{
-			return (alpha >= 1.0f || alpha <= 0.0f);
+			return (isBlack && alpha >= 1.0f) || (!isBlack && alpha <= 0.0f);
 		}
 	}
 
@@ -22,6 +22,7 @@ public class ScreenFade : MonoBehaviour {
 	{
 		black = transform.FindChild("black").GetComponent<Image>();
 		isBlack = false;
+		alpha = 1.0f;
 	}
 
 	void Update () 

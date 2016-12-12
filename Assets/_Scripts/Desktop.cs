@@ -25,6 +25,13 @@ public class Desktop : MonoBehaviour {
 		buildings = transform.FindChild("Buildings").GetComponent<Button>();
 		skyscrapers = transform.FindChild("Skyscrapers").GetComponent<Button>();
 		life = transform.FindChild("Life").GetComponent<Button>();
+
+		sky_complete = false;
+		grass_complete = false;
+		roads_complete = false;
+		buildings_complete = false;
+		skyscrapers_complete = false;
+		life_complete = false;
 	}
 
 	void Update () 
