@@ -20,7 +20,7 @@ public class Mover : MonoBehaviour {
 
 	void Start () 
 	{
-		image = transform.FindChild("Image").GetComponent<Image>();
+		image = transform.Find("Image").GetComponent<Image>();
 	}
 
 	void Update () 

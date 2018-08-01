@@ -10,8 +10,8 @@ public class Sky : MonoBehaviour {
 
 	void Awake()
 	{
-		restore = transform.FindChild("restore").GetComponent<Button>();
-		equation_1 = transform.FindChild("equation_1").GetComponent<Textbox>();
+		restore = transform.Find("restore").GetComponent<Button>();
+		equation_1 = transform.Find("equation_1").GetComponent<Textbox>();
 		restore.gameObject.SetActive(false);
 	}
 

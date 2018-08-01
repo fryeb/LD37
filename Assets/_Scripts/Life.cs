@@ -14,9 +14,9 @@ public class Life : MonoBehaviour
 
 	void Start()
 	{
-		restore = transform.FindChild("restore").GetComponent<Button>();
-		fix = transform.FindChild("fix").GetComponent<Button>();
-		text = transform.FindChild("text").GetComponent<Text>();
+		restore = transform.Find("restore").GetComponent<Button>();
+		fix = transform.Find("fix").GetComponent<Button>();
+		text = transform.Find("text").GetComponent<Text>();
 
 		restore.gameObject.SetActive(false);
 		fix.gameObject.SetActive(true);

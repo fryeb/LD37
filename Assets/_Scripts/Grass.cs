@@ -14,11 +14,11 @@ public class Grass : MonoBehaviour {
 
 	void Start () 
 	{
-		mover = transform.FindChild("mover").GetComponent<Mover>();
+		mover = transform.Find("mover").GetComponent<Mover>();
 
-		start = transform.FindChild("start").GetComponent<Button>();
-		stop = transform.FindChild("stop").GetComponent<Button>();
-		restore = transform.FindChild("restore").GetComponent<Button>();
+		start = transform.Find("start").GetComponent<Button>();
+		stop = transform.Find("stop").GetComponent<Button>();
+		restore = transform.Find("restore").GetComponent<Button>();
 
 		start.gameObject.SetActive(false);
 		restore.gameObject.SetActive(false);

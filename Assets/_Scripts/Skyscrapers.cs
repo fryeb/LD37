@@ -16,17 +16,17 @@ public class Skyscrapers : MonoBehaviour {
 
 	void Awake () 
 	{
-		start = transform.FindChild("start").GetComponent<Button>();
-		stop = transform.FindChild("stop").GetComponent<Button>();
-		restore = transform.FindChild("restore").GetComponent<Button>();
+		start = transform.Find("start").GetComponent<Button>();
+		stop = transform.Find("stop").GetComponent<Button>();
+		restore = transform.Find("restore").GetComponent<Button>();
 
 		start.gameObject.SetActive(false);
 		stop.gameObject.SetActive(true);
 		restore.gameObject.SetActive(false);
 
-		mover_1 = transform.FindChild("mover_1").GetComponent<Mover>();
-		mover_2 = transform.FindChild("mover_2").GetComponent<Mover>();
-		mover_3 = transform.FindChild("mover_3").GetComponent<Mover>();
+		mover_1 = transform.Find("mover_1").GetComponent<Mover>();
+		mover_2 = transform.Find("mover_2").GetComponent<Mover>();
+		mover_3 = transform.Find("mover_3").GetComponent<Mover>();
 	}
 
 	void Update () 

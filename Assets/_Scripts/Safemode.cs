@@ -8,8 +8,8 @@ public class Safemode : MonoBehaviour {
 
 	void Start () 
 	{
-		regular = transform.FindChild("Regular").GetComponent<Button>();
-		safe = transform.FindChild("Safe").GetComponent<Button>();
+		regular = transform.Find("Regular").GetComponent<Button>();
+		safe = transform.Find("Safe").GetComponent<Button>();
 	}
 
 	void Update () 

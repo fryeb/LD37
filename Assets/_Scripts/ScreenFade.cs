@@ -20,7 +20,7 @@ public class ScreenFade : MonoBehaviour {
 
 	void Awake () 
 	{
-		black = transform.FindChild("black").GetComponent<Image>();
+		black = transform.Find("black").GetComponent<Image>();
 		isBlack = false;
 		alpha = 1.0f;
 	}

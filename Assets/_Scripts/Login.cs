@@ -10,8 +10,8 @@ public class Login : MonoBehaviour {
 
 	void Start () 
 	{
-		password = transform.FindChild("password").GetComponent<Textbox>();
-		start = transform.FindChild("start").GetComponent<Button>();
+		password = transform.Find("password").GetComponent<Textbox>();
+		start = transform.Find("start").GetComponent<Button>();
 		start.gameObject.SetActive(false);
 	}
 	

@@ -7,7 +7,7 @@ public class Logo : MonoBehaviour {
 
 	void Start () 
 	{
-		power = transform.FindChild("power").GetComponent<Button>();
+		power = transform.Find("power").GetComponent<Button>();
 	}
 
 	void Update () 

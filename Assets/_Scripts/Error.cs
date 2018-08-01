@@ -8,8 +8,8 @@ public class Error : MonoBehaviour {
 
 	void Start () 
 	{
-		ButtonX = transform.FindChild("ButtonX").GetComponent<Button>();
-		ButtonOK = transform.FindChild("ButtonOK").GetComponent<Button>();
+		ButtonX = transform.Find("ButtonX").GetComponent<Button>();
+		ButtonOK = transform.Find("ButtonOK").GetComponent<Button>();
 
 	}
 
