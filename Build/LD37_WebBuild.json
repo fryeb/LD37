@@ -1,0 +1,13 @@
+{
+"companyName": "SpireCore Studios",
+"productName": "LD37",
+"dataUrl": "LD37_WebBuild.data.unityweb",
+"asmCodeUrl": "LD37_WebBuild.asm.code.unityweb",
+"asmMemoryUrl": "LD37_WebBuild.asm.memory.unityweb",
+"asmFrameworkUrl": "LD37_WebBuild.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
